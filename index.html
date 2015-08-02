@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>House Gallery</title>
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="magnific-popup.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="zepto.min.js"></script>
+    <!-- Magnific Popup core JS file -->
+    <script src="magnific-popup.min.js"></script>
+    <script>
+    </script>
+  </head>
+  <body>
+      <h1>House Gallery</h1>
+
+      <p>This is a gallery of a couple of pictures I took of my house. It's not really <em>my</em> house, but I'm renting a room in it, and I'd like to further sublet that room out while I do an 8-month internship abroad. If you have any further questions, <a href="mailto:abe.fehr@gmail.com">let me know</a>.</p>
+      <div class="html-code grid-of-images">
+        <div class="popup-gallery">
+          <a href="img/outside-view.jpg" title="Outside View" data-description="This is how the front of the house looks. It's nicer on the inside, I swear."><img src="img/outside-view.jpg" width="100" height="100"></a>
+          <a href="img/entrance-coatrack.jpg" title="Entrance w/ Coatrack" data-description="A shot of the entrance"><img src="img/entrance-coatrack.jpg" width="100" height="100"></a>
+          <a href="img/entrance-staircase.jpg" title="Entrance Staircase" data-description="This is the view when you first walk into the entrance. My room is up those stairs."><img src="img/entrance-staircase.jpg" width="100" height="100"></a>
+          <a href="img/living-room-lamp.jpg" title="Living Room w/ Lamp" data-description="Notice the lamp in the foreground? That's me being artsy."><img src="img/living-room-lamp.jpg" width="100" height="100"></a>
+          <a href="img/living-room-window.jpg" title="Living Room Window" data-description="An alternate angle of the living room"><img src="img/living-room-window.jpg" width="100" height="100"></a>
+          <a href="img/living-dining-kitchen.jpg" title="Living/Dining/Kitchen" data-description="This is one shot of the living room in which the dining room and a small part of the kitchen can be seen."><img src="img/living-dining-kitchen.jpg" width="100" height="100"></a>
+          <a href="img/dining-room-table.jpg" title="Dining Room Table" data-description="This is where most meals would be eaten if they weren't eaten in bed or on the couch"><img src="img/dining-room-table.jpg" width="100" height="100"></a>
+          <a href="img/kitchen-dirty.jpg" title="Dirty Kitchen" data-description="The house has a beautiful kitchen with dirty dishes on the counter. Don't worry, I cleaned the dishes after the shot was taken."><img src="img/kitchen-dirty.jpg" width="100" height="100"></a>
+          <a href="img/kitchen-patio-doors.jpg" title="Patio Doors to Backyard" data-description="There's another small table in the kitchen and patio doors that lead to outside. There's a barbeque back there."><img src="img/kitchen-patio-doors.jpg" width="100" height="100"></a>
+          <a href="img/stairs-top.jpg" title="View from Stairs" data-description="The view from the top of the stairs, just outside of my room door"><img src="img/stairs-top.jpg" width="100" height="100"></a>
+          <a href="img/room-bed.jpg" title="My Bed" data-description="My IKEA Malm bed with the floating nightstands they don't sell anymore. This comes with the room."><img src="img/room-bed.jpg" width="100" height="100"></a>
+          <a href="img/room-dresser.jpg" title="My Dresser" data-description="The dresser, which was one of the first things I bought when I arrived in Ontario. $20 off Kijiji with delivery only, but it was good enough for me and held up all these years. Comes with the room."><img src="img/room-dresser.jpg" width="100" height="100"></a>
+          <a href="img/room-shelf.jpg" title="My Shelf/TV" data-description="A little shelf I got from Target to put my TV on. The shelf comes with the room but the TV unfortunately does not (sorry)."><img src="img/room-shelf.jpg" width="100" height="100"></a>
+          <a href="img/room-closet.jpg" title="My Closet" data-description="The room is pretty big, and it has a closet if you use one of those. Evidently, I just use the floor as my closet."><img src="img/room-closet.jpg" width="100" height="100"></a>
+        </div>
+      </div>
+      <p style="text-align:center;"><small>Click on an image to see it in more detail</small></p>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('.popup-gallery').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'mfp-img-mobile',
+            gallery: {
+              enabled: true,
+              navigateByImgClick: true,
+              preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            },
+            image: {
+              tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+              titleSrc: function(item) {
+                return item.el.attr('title') + '<small>' + item.el.attr('data-description') + '</small>';
+              }
+            }
+          });
+        });
+      </script>
+    </div>
+    </body>
+</html>
